@@ -1,25 +1,25 @@
--- 1. film tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
+-- Select title and description columns from the film table and order by title.
 SELECT title, description
 FROM film
 ORDER BY title;
 
--- 2. film tablosunda bulunan tüm sütunlardaki verileri film uzunluğu (length) 60 dan büyük VE 75 ten küçük olma koşullarıyla sıralayınız.
+-- Select all columns from the film table where length is greater than 60 and less than 75.
 SELECT *
 FROM film
 WHERE length>60 AND length<75;
 
--- 3. film tablosunda bulunan tüm sütunlardaki verileri rental_rate 0.99 VE replacement_cost 12.99 VEYA 28.99 olma koşullarıyla sıralayınız.
+-- Select all columns from the film table where rental_rate is 0.99 and replacement_cost is either 12.99 or 28.99.
 SELECT *
 FROM film
 WHERE rental_rate=0.99 AND replacement_cost=12.99 OR replacement_cost=28.99;
 
--- 4. customer tablosunda bulunan first_name sütunundaki değeri 'Mary' olan müşterinin last_name sütunundaki değeri nedir?
+-- Find the last_name of the customer whose first_name is 'Mary'
 SELECT last_name
 FROM customer
 WHERE first_name='Mary'; --Smith
 
 
--- 5. film tablosundaki uzunluğu(length) 50 ten büyük OLMAYIP aynı zamanda rental_rate değeri 2.99 veya 4.99 OLMAYAN verileri sıralayınız.
+-- Select all columns from the film table where length is not greater than 50 and rental_rate is neither 2.99 nor 4.99.
 SELECT * 
 FROM film
 WHERE length<=50 AND (rental_rate != 2.99 OR rental_rate != 4.99)
